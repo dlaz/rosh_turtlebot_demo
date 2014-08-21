@@ -16,6 +16,5 @@ while ok():
     if (t % 5 == 0) and last_change != t:
         vel = rand_cmd_vel()
         last_change = t
-        print vel
     topics.leader.commands.velocity(vel)
     r.sleep()

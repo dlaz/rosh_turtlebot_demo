@@ -1,4 +1,4 @@
-#!/usr/bin/env rosh
+#!/usr/bin/env python
 import tf
 import rospy
 from geometry_msgs.msg import PoseWithCovariance, TwistWithCovariance

@@ -3,7 +3,7 @@
   <arg name="stacks" default="hexagons"/>
   <arg name="3d_sensor" default="kinect"/>
 
-  <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find rosh_turtlebot_demo)/leader.urdf.xacro'" />
+  <arg name="urdf_file" default="$(find xacro)/xacro.py '$(find turtlebot_description)/robots/$(arg base)_$(arg stacks)_$(arg 3d_sensor).urdf.xacro'" />
   <param name="robot_description" command="$(arg urdf_file)" />
 
   <!-- start gazebo -->
@@ -30,10 +30,13 @@
     <param name="tf_prefix" value="follower"/>
     <include file="$(find rosh_turtlebot_demo)/launch/one_robot.launch">
       <arg name="robot_name" value="follower"/>
-      <arg name="init_pose" value="-x 1 -y 0 -z 0"/>
+      <arg name="init_pose" value="-x 1 -y 1 -z 0"/>
     </include>
   </group>
 
   <node name="odom_pub" type="publish_odom.py" pkg="rosh_turtlebot_demo"/>
+  <node name="follow" type="follow.py" pkg="rosh_turtlebot_demo"/>
+  <node name="random_move" type="random_move.py" pkg="rosh_turtlebot_demo"/>
+  <node name="reset_on_bump" type="reset.py" pkg="rosh_turtlebot_demo"/>
 
 </launch>
