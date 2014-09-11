@@ -14,7 +14,7 @@ Presentation slides: http://bit.ly/1llIKDj
 * [publish_odom.py](scripts/publish_odom.py): Uses data from gazebo/model_states to publish odom and tf for the robots since gazebo doesn't do it properly.
 * [random_move.py](scripts/random_move.py) (rosh): periodically changes leader's cmd_vel to random values
 * [follow.py](scripts/follow.py) (rosh): directs follower to move towards leader
-* [reset.py](scripts/follow.py) (rosh): waits for changes in the bumper state and teleports both robots to random locations when a bump happens
+* [reset.py](scripts/reset.py) (rosh): waits for changes in the bumper state and teleports both robots to random locations when a bump happens
 
 ## Running
     roslaunch rosh_turtlebot_demo robots.launch 
